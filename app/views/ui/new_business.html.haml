@@ -1,0 +1,34 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Add a Business
+      %hr
+      %form
+        .row
+          .form-group.col-sm-8
+            %label(for="name") Name
+            %input(type="text" class="form-control" id="name" placeholder="ex: Panera Bread")
+        .row
+          .form-group.col-sm-8
+            %label(for="street") Street Address
+            %input(type="text" class="form-control" id="street" placeholder="ex: 201 Brookline Avenue")
+        .row
+          .form-group.col-sm-4
+            %label(for="city") City
+            %input(type="text" class="form-control" id="city" placeholder="ex: San Francisco")
+          .form-group.col-sm-2
+            %label(for="state") State
+            %input(type="text" class="form-control" id="state" placeholder="ex: CA")
+          .form-group.col-sm-2
+            %label(for="zipcode") Zipcode
+            %input(type="text" class="form-control" id="zipcode" placeholder="ex: 94000")
+        .row
+          .form-group.col-sm-8
+            %label(for="area") Area
+            %input(type="text" class="form-control" id="area" placeholder="ex: Downtown")
+        .row
+          .form-group.col-sm-8
+            %label(for="phone") Phone
+            %input(type="tel" class="form-control" id="phone" placeholder="ex: 111-222-3333")
+        .form-group
+          %button(type="submit" class="btn btn-primary") Submit

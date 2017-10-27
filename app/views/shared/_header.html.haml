@@ -1,4 +1,23 @@
-%section#top-header.row
-  %h1.col-md-2
-    = link_to "MyYelp"
+%nav.navbar
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to 'myyelp', '', class: 'navbar-brand'
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li
+          = link_to 'Businesses', ''
+        %li
+          = link_to 'Add a Business', ''
+        %li
+          = link_to 'Recent Reviews', ''
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to 'Sign In', ''
+        %li
+          = link_to 'Sign Up', ''
   

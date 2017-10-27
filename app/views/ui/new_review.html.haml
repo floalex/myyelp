@@ -1,0 +1,23 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Add a Review
+      %hr
+      %form
+        .row
+          .form-group.col-sm-8
+            %label Rate this business
+            .row
+              .col-sm-3
+                %select.form-control(name="")
+                  %option(value="5") 5 Stars
+                  %option(value="4") 4 Stars
+                  %option(value="3") 3 Stars
+                  %option(value="2") 2 Stars
+                  %option(value="1") 1 Star
+        .row
+          .form-group.col-sm-12
+            %label(for="address") Review
+            %textarea(class="form-control" id="address" rows=5 placeholder="Write your review here")
+        .form-group
+          %button(type="submit" class="btn btn-primary") Submit

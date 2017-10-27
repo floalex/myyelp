@@ -1,0 +1,40 @@
+.container
+  .business-details
+    .row
+      .col-sm-4
+        = image_tag 'http://via.placeholder.com/250x250'
+      .col-sm-4
+        %h1 First Last
+        %h4 San Francisco, CA
+        %p 250 reviews
+
+  .reviews
+    - 3.times do |index|
+      %h3 Reviews
+      .row
+        %hr
+        .row.review
+          %figure.col-sm-1
+            = image_tag 'http://via.placeholder.com/60x60'
+          .col-sm-2
+            = link_to '' do
+              %strong Cafe
+            %p
+              %strong
+                4.5/5
+                %small (250 reviews)
+            %section.location
+              %p.address 100 Market St., San Francisco, CA 94000
+              %p.phone (405) 000-0000
+              %p.area Downtown
+          .col-sm-8
+            %p
+              %strong Rating: 5.0/5
+              \- 4/10/2017
+            .review-content
+              Loved this new Israeli restaurant from the owner of the next door Falafel Stop. Fancier and better quality food, very different menu. Nice ambience
+              %br
+              %br
+              Vivamus et nulla tempus, aliquet quam eu, viverra massa. Nam at pharetra ex. Nam pellentesque nunc tellus, quis scelerisque libero sollicitudin non.
+  
+     

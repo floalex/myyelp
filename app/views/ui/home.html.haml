@@ -1,1 +1,46 @@
-Hello
+.container.businesses
+  .row
+    - 6.times do |index|
+      .col-sm-10.col-sm-offset-1
+        %hr
+        .row.business
+          %figure.col-sm-2
+            = image_tag "https://s3-us-west-2.amazonaws.com/flo-railsyelp/uploads/coffee-cappuccino.jpg", size: '90x90'
+          .business-info.col-sm-10
+            .pull-left
+              %h4
+                %span #{index + 1}.
+                = link_to 'Cafe', ''
+              .btn-group.star-rating(data-toggle="buttons")
+                %label.btn.btn-danger.btn-sm(for="rating-1")      
+                  %input(type="radio" name="rating-1" id="rating-1")
+                  %span.glyphicon.glyphicon-star
+                %label.btn.btn-danger.btn-sm(for="rating-2")        
+                  %input(type="radio" name="rating-2" id="rating-2")
+                  %span.glyphicon.glyphicon-star
+                %label.btn.btn-danger.btn-sm(for="rating-3")          
+                  %input(type="radio" name="rating-3" id="rating-3")
+                  %span.glyphicon.glyphicon-star
+                %label.btn.btn-danger.btn-sm.active(for="rating-4")          
+                  %input(type="radio" name="rating-4" id="rating-4")
+                  %span.glyphicon.glyphicon-star
+                %label.btn.btn-danger.btn-sm(for="rating-5")          
+                  %input(type="radio" name="rating-5" id="rating-5")
+                  %span.glyphicon.glyphicon-star           
+              %span 58 reviews
+            %section.location.pull-right
+              %p.area Downtown
+              %p.address 100 Market St., San Francisco, CA 94000
+              %p.phone (405) 000-0000
+  
+  
+        .row.review-preview
+          .col-sm-12
+            .media-avatar
+              = image_tag 'http://via.placeholder.com/30x30'
+            %p
+              Loved this new Israeli restaurant from the owner of the next door Falafel Stop. Fancier and better quality food, very different menu. Nice ambience...
+              = link_to 'read more', ''
+
+
+  
