@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root "businesses#index"
   get '/home', to: 'businesses#index'
   
-  resources :businesses, only: [:index, :show]
+  resources :businesses, only: [:index, :show, :new, :create]
 end

@@ -1,0 +1,24 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Add a Business
+      %hr
+      = bootstrap_form_for(@business) do |f|
+        .row
+          .form-group.col-sm-8
+            = f.text_field :name, label: 'Company name', placeholder: 'Panara Bread'
+        .row
+          .form-group.col-sm-8
+            = f.text_field :address, label: 'Street Address', placeholder: '201 Brookline Avenue'
+        .row
+          .form-group.col-sm-4
+            = f.text_field :city, label: 'City', placeholder: 'San Francisco'
+          .form-group.col-sm-2
+            = f.select :state, options_for_select(us_states)
+          .form-group.col-sm-2
+            = f.text_field :zipcode, label: 'Zipcode', placeholder: '94000'
+        .row
+          .form-group.col-sm-8
+            = f.text_field :phone, label: 'Phone', placeholder: '1112223333'
+        .form-group
+          = f.submit 'Submit', class: "btn btn-primary"

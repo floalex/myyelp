@@ -39,7 +39,7 @@
               %p.address
                 = city_through_zip(business)
               %p.phone 
-                = business.phone
+                = formatted_phone_number(business.phone)
   
   
         .row.review-preview

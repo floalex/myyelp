@@ -5,6 +5,6 @@ class Business < ActiveRecord::Base
   validates :address, presence: true
   validates :state, presence: true
   validates :city, presence: true
-  validates :zipcode, presence: true
-  validates :phone, presence: true
+  validates :zipcode, presence: true, numericality: { only_integer: true }, length: { is: 5 }
+  validates :phone, presence: true, numericality: { only_integer: true }
 end
