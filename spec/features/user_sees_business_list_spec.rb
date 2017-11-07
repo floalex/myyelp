@@ -16,6 +16,6 @@ feature "User can see a list of businesses" do
     expect(page).to have_content(business.city)
     expect(page).to have_content(business.state)
     expect(page).to have_content(business.zipcode)
-    # expect(page).to have_content(business.phone)
+    expect(page).to have_content("(#{business.phone.slice(0..2)}) #{business.phone.slice(3..5)}-#{business.phone.slice(6..9)}")
   end
 end
