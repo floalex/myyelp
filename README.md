@@ -5,11 +5,11 @@
   
 2. User can add a business
 
-3. User Registration -  Sign Up
+3. User Registration -  Sign Up 
 
 4. User Registration -  Sign in and Sign Out
 
-5. User can see a list of recent reviews
+5. User can see a list of recent reviews - doing
   - allow only text reviews
 
 6. User can review a business (add a new review)

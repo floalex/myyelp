@@ -63,4 +63,8 @@ module ApplicationHelper
       ['Wyoming', 'WY']
     ]
   end
+  
+  def format_date(date)
+    date.strftime('%m/%d/%Y')
+  end
 end

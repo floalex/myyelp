@@ -1,0 +1,38 @@
+.container
+  %h1 Recent Reviews
+  - 10.times do 
+    .row
+      %hr
+      .row.review
+        %figure.col-sm-1
+          = image_tag 'http://via.placeholder.com/60x60'
+        .col-sm-2
+          %p.name
+            = link_to '' do
+              %strong User
+          %p.location
+            %strong San Francisco
+          %p 6 reviews
+          %p 10/9/2017
+        .review-content.col-sm-8
+          %h4
+            = link_to 'Business Name', ''
+            %small= '100 Market St, San Francisco, 94000'
+          .btn-group.star-rating(data-toggle="buttons")
+            %label.btn.btn-danger.btn-sm(for="rating-1")      
+              %input(type="radio" name="rating-1" id="rating-1")
+              %span.glyphicon.glyphicon-star
+            %label.btn.btn-danger.btn-sm(for="rating-2")        
+              %input(type="radio" name="rating-2" id="rating-2")
+              %span.glyphicon.glyphicon-star
+            %label.btn.btn-danger.btn-sm(for="rating-3")          
+              %input(type="radio" name="rating-3" id="rating-3")
+              %span.glyphicon.glyphicon-star
+            %label.btn.btn-danger.btn-sm.active(for="rating-4")          
+              %input(type="radio" name="rating-4" id="rating-4")
+              %span.glyphicon.glyphicon-star
+            %label.btn.btn-danger.btn-sm(for="rating-5")          
+              %input(type="radio" name="rating-5" id="rating-5")
+              %span.glyphicon.glyphicon-star
+        .review-content.col-sm-8
+          = truncate('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec velit non urna ornare tempor sed at justo. Nullam eu nisl sem. Integer non maximus purus. Maecenas vulputate dui eros, sed pharetra leo scelerisque eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum sapien at felis convallis volutpat. Etiam non felis in nisi pulvinar iaculis non at elit. Quisque pellentesque dignissim felis id elementum.Vivamus et nulla tempus, aliquet quam eu, viverra massa. Nam at pharetra ex. Nam pellentesque nunc tellus, quis scelerisque libero sollicitudin non.', length: 150)

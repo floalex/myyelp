@@ -6,15 +6,23 @@
       %form
         .row
           .form-group.col-sm-8
-            %label Rate this business
-            .row
-              .col-sm-3
-                %select.form-control(name="")
-                  %option(value="5") 5 Stars
-                  %option(value="4") 4 Stars
-                  %option(value="3") 3 Stars
-                  %option(value="2") 2 Stars
-                  %option(value="1") 1 Star
+            %label Rate this business:
+            .btn-group.star-rating.rateable(data-toggle="buttons")
+              %label.btn.btn-default.btn-sm(for="rating-1")      
+                %input(type="radio" name="rating-1" id="rating-1")
+                %span.glyphicon.glyphicon-star
+              %label.btn.btn-default.btn-sm(for="rating-2")        
+                %input(type="radio" name="rating-2" id="rating-2")
+                %span.glyphicon.glyphicon-star
+              %label.btn.btn-default.btn-sm(for="rating-3")          
+                %input(type="radio" name="rating-3" id="rating-3")
+                %span.glyphicon.glyphicon-star
+              %label.btn.btn-default.btn-sm(for="rating-4")          
+                %input(type="radio" name="rating-4" id="rating-4")
+                %span.glyphicon.glyphicon-star
+              %label.btn.btn-default.btn-sm(for="rating-5")          
+                %input(type="radio" name="rating-5" id="rating-5")
+                %span.glyphicon.glyphicon-star
         .row
           .form-group.col-sm-12
             %label(for="address") Review

@@ -7,6 +7,7 @@ describe Business do
   it { should validate_presence_of(:city) }
   it { should validate_presence_of(:zipcode) }
   it { should validate_presence_of(:phone) }
+  it { should have_many(:reviews) }
   
   describe "default scope" do
     it "returns the businesses in the reverse chronical order by created_at" do

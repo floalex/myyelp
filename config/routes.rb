@@ -10,4 +10,9 @@ Rails.application.routes.draw do
   
   resources :businesses, only: [:index, :show, :new, :create]
   resources :users, only: [:create]
+  resources :reviews, only: [:index] do
+    collection do
+      get '/recent', to: 'reviews#index'
+    end
+  end
 end

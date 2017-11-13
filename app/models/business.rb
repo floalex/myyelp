@@ -7,4 +7,6 @@ class Business < ActiveRecord::Base
   validates :city, presence: true
   validates :zipcode, presence: true, numericality: { only_integer: true }, length: { is: 5 }
   validates :phone, presence: true, numericality: { only_integer: true }
+  
+  has_many :reviews
 end
