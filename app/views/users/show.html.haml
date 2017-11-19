@@ -1,0 +1,27 @@
+.container
+  .business-details
+    .row
+      .col-sm-4
+        = image_tag 'http://via.placeholder.com/250x250'
+      .col-sm-4
+        %h1= @user.full_name
+        %h4= @user.zipcode
+        %p #{@user.reviews_count} #{'review'.pluralize(@user.reviews_count)}
+
+  - if @user.reviews_count > 0
+    .reviews
+      %h3 Reviews
+      - @user.reviews.each do |review|
+        .row
+          %hr
+          .row.review
+            .review-content.col-sm-8
+              %h4
+                = link_to review.business.name, business_path(review.business)
+                %small= review.business.address
+              .row.col-sm-8
+                = render partial: 'shared/star_rating_set', locals: { rating: review.rating }
+              .row.col-sm-12
+                = truncate(review.content, length: 150)
+  
+     

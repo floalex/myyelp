@@ -14,9 +14,7 @@
         %li
           = link_to 'Add a business', new_business_path
         %li
-          = link_to 'Write a review', ''
-        %li
-          = link_to 'Recent reviews', ''
+          = link_to 'Recent reviews', recent_reviews_path
       %ul.nav.navbar-nav.navbar-right
         - if signed_in?
           %li.dropdown

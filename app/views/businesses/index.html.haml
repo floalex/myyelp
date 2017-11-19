@@ -26,14 +26,14 @@
               %p.phone 
                 = formatted_phone_number(business.phone)
   
-  
-        .row.review-preview
-          .col-sm-12
-            .media-avatar
-              = image_tag 'http://via.placeholder.com/30x30'
-            %p
-              Loved this new Israeli restaurant from the owner of the next door Falafel Stop. Fancier and better quality food, very different menu. Nice ambience...
-              = link_to 'read more', ''
+        - if business.reviews.any?
+          .row.review-preview
+            .col-sm-12
+              .media-avatar
+                = image_tag 'http://via.placeholder.com/30x30'
+              %p
+                = truncate(business.reviews.first.content, length: 150)
+                = link_to 'read more', business_path(business)
 
 
   

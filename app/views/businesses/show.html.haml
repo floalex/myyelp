@@ -27,14 +27,14 @@
             = image_tag 'http://via.placeholder.com/60x60'
           .col-sm-2
             %p.name
-              = link_to '' do
+              = link_to user_path(review.user) do
                 %strong #{review.user_full_name}
             %p #{review.user_reviews_count} #{'review'.pluralize(review.user_reviews_count)}
             %p
               = format_date review.created_at
           .review-content.col-sm-8
             %h4
-              = link_to review.business.name, ''
+              = link_to review.business.name, business_path(review.business)
               %small= review.business.address
             .row.col-sm-8
               = render partial: 'shared/star_rating_set', locals: { rating: review.rating }

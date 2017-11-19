@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   
-  resources :users, only: [:create]
+  resources :users, only: [:create, :show]
   resources :reviews, only: [:index] do
     collection do
       get '/recent', to: 'reviews#index'

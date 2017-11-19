@@ -15,7 +15,7 @@
             = format_date review.created_at
         .review-content.col-sm-8
           %h4
-            = link_to review.business.name, ''
+            = link_to review.business.name, business_path(review.business)
             %small= review.business.address
           .row.col-sm-8
             = render partial: 'shared/star_rating_set', locals: { rating: review.rating }

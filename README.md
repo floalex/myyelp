@@ -12,7 +12,8 @@
 5. User can see a list of recent reviews 
   - allow only text reviews
 
-6. User can review a business (add a new review) -adding review
+6. User can review a business (add a new review) 
 
-7. User can see another user's profile page
+7. User can see another user's profile page   
+  - user can see his/her own profile page with past reviews
   - also shows this user's past reviews

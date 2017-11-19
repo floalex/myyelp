@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe UsersController do
+  
   describe "GET new" do
     it "sets @user" do
       get :new
@@ -9,6 +10,7 @@ describe UsersController do
   end
   
   describe "POST create" do
+    
     context "with valid information" do
   
       before do
@@ -25,6 +27,7 @@ describe UsersController do
     end
     
     context "with invalid information" do
+      
       before do
         post :create, user: { password: "password" } 
       end
@@ -42,5 +45,16 @@ describe UsersController do
       end
       
     end
+    
   end
+  
+  describe "GET show" do
+    let(:user) { Fabricate(:user) }
+    
+    it "sets @user to be the user is being viewed" do
+      get :show, id: user.id
+      expect(assigns(:user)).to eq(user)
+    end
+  end
+  
 end
