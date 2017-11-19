@@ -1,6 +1,13 @@
 class BusinessesController < ApplicationController
+  before_action :require_user, only: [:new, :create]
+  
   def index
     @businesses = Business.all
+  end
+  
+  def show
+    @business = Business.find(params[:id])
+    @reviews = @business.reviews
   end
   
   def new

@@ -16,4 +16,19 @@ describe Business do
       expect(Business.all).to eq([business1, business2])
     end
   end
+  
+  describe "#average_rating" do
+    let(:business) { Fabricate(:business) }
+    let(:user) { Fabricate(:user) }
+
+    it "returns nil if there are no reviews" do
+      expect(business.average_rating).to eq(nil)
+    end
+    
+    it "returns the average rating of the business reviews" do
+      review1 = Fabricate(:review, rating: 3, business: business, user: user)
+      review2 = Fabricate(:review, rating: 5, business: business, user: user)
+      expect(business.average_rating).to eq(4)    
+    end
+  end
 end

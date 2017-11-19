@@ -16,23 +16,8 @@
               %h4
                 %span #{index + 1}.
                 = link_to business.name, business_path(business)
-              .btn-group.star-rating(data-toggle="buttons")
-                %label.btn.btn-danger.btn-sm(for="rating-1")      
-                  %input(type="radio" name="rating-1" id="rating-1")
-                  %span.glyphicon.glyphicon-star
-                %label.btn.btn-danger.btn-sm(for="rating-2")        
-                  %input(type="radio" name="rating-2" id="rating-2")
-                  %span.glyphicon.glyphicon-star
-                %label.btn.btn-danger.btn-sm(for="rating-3")          
-                  %input(type="radio" name="rating-3" id="rating-3")
-                  %span.glyphicon.glyphicon-star
-                %label.btn.btn-danger.btn-sm.active(for="rating-4")          
-                  %input(type="radio" name="rating-4" id="rating-4")
-                  %span.glyphicon.glyphicon-star
-                %label.btn.btn-danger.btn-sm(for="rating-5")          
-                  %input(type="radio" name="rating-5" id="rating-5")
-                  %span.glyphicon.glyphicon-star           
-              %span 58 reviews
+              = render partial: 'shared/star_rating_set', locals: { rating: business.average_rating }  
+              %span #{business.reviews.count} #{'review'.pluralize(business.reviews.count)}
             %section.location.pull-right
               %p.address 
                 = business.address

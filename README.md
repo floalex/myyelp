@@ -9,10 +9,10 @@
 
 4. User Registration -  Sign in and Sign Out
 
-5. User can see a list of recent reviews - doing
+5. User can see a list of recent reviews 
   - allow only text reviews
 
-6. User can review a business (add a new review)
+6. User can review a business (add a new review) -adding review
 
 7. User can see another user's profile page
   - also shows this user's past reviews

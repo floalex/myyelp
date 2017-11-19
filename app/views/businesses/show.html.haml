@@ -1,0 +1,42 @@
+.container
+  .business-details
+    .row
+      .col-sm-4
+        = image_tag 'http://via.placeholder.com/250x250'
+      .col-sm-4
+        %h1= @business.name
+        = render partial: 'shared/star_rating_set', locals: { rating: @business.average_rating }  
+        %span #{@business.reviews.count} #{'review'.pluralize(@business.reviews.count)}
+        %section.location
+          %p.address 
+            = @business.address
+          %p.address
+            = city_through_zip(@business)
+          %p.phone 
+            = formatted_phone_number(@business.phone)
+      .col-sm-4
+        = link_to "Write a Review", new_business_review_path(@business), class: "btn write-icon"
+
+  .reviews
+    %h3 Reviews
+    - @reviews.each do |review|
+      .row
+        %hr
+        .row.review
+          %figure.col-sm-1
+            = image_tag 'http://via.placeholder.com/60x60'
+          .col-sm-2
+            %p.name
+              = link_to '' do
+                %strong #{review.user_full_name}
+            %p #{review.user_reviews_count} #{'review'.pluralize(review.user_reviews_count)}
+            %p
+              = format_date review.created_at
+          .review-content.col-sm-8
+            %h4
+              = link_to review.business.name, ''
+              %small= review.business.address
+            .row.col-sm-8
+              = render partial: 'shared/star_rating_set', locals: { rating: review.rating }
+            .row.col-sm-12
+              = truncate(review.content, length: 150)

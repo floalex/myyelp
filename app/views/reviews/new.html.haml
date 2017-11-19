@@ -1,0 +1,39 @@
+.container
+  .row
+    .well.form-container.col-sm-8.col-sm-offset-2
+      %h3 Add a Review
+      %h3
+        for 
+        = link_to @business.name, business_path(@business)
+      %hr
+      = bootstrap_form_for([@business, @review]) do |f|  
+        .row
+          .form-group.col-sm-12
+            %label Your rating:
+            .btn-group.star-rating.rateable(data-toggle="buttons")
+              %label.btn.btn-default(for="rating-1")
+                = f.radio_button :rating, 1
+                %span.glyphicon.glyphicon-star
+                %p= 1
+              %label.btn.btn-default(for="rating-2")        
+                = f.radio_button :rating, 2
+                %span.glyphicon.glyphicon-star
+                %p= 2
+              %label.btn.btn-default(for="rating-3")          
+                = f.radio_button :rating, 3
+                %span.glyphicon.glyphicon-star
+                %p= 3
+              %label.btn.btn-default(for="rating-4")          
+                = f.radio_button :rating, 4
+                %span.glyphicon.glyphicon-star
+                %p= 4
+              %label.btn.btn-default(for="rating-5")          
+                = f.radio_button :rating, 5
+                %span.glyphicon.glyphicon-star
+                %p= 5
+        .row
+          .form-group.col-sm-12
+            = f.text_area :content, class: 'form-control', hide_label: true, rows: 4, placeholder: 'Write your review here'
+        .form-group
+          = f.submit 'Submit Review', class: 'btn btn-primary'
+          = link_to "Cancel", business_path(@business)
